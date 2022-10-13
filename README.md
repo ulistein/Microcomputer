@@ -32,15 +32,16 @@ Bei Gewinn leuchtet ganze Matrix in LEDs des jeweiligen Spielers --> Strich/ aus
 
 ### Ansteuerung der Matrix
 
- [x] Ansteuerung der passenden LEDs
+- [ ] Ansteuerung der passenden LEDs
 
-- [x] Abwechseln der Spielanzeige Ausgefüllt & Querstrich
+- [ ] Abwechseln der Spielanzeige Ausgefüllt & Querstrich
 
-- [x] Fehlermeldung, wenn bereits angesteuertes Feld nochmal angesteuert werden soll
+- [ ] Fehlermeldung, wenn bereits angesteuertes Feld nochmal angesteuert werden soll
 
-- [x] Gewinn Bedingung checken, wenn 3 in einer Reihe gleich sind --> ganze Matrix in Gewinner Form
+- [ ] Gewinn Bedingung checken, wenn 3 in einer Reihe gleich sind --> ganze Matrix in Gewinner Form
+- [ ] Array um Gewinn zu checken und überschreiben zu verhindern 
 
 ### Fernbedienung 
 
-Auswertung der Fernbedienungssignale, welche LEDs angesteuert werden sollen
+- [ ] Auswertung der Fernbedienungssignale, welche LEDs angesteuert werden sollen
 

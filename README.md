@@ -32,6 +32,7 @@ Bei Gewinn leuchtet ganze Matrix in LEDs des jeweiligen Spielers --> Strich/ aus
 
 ### Ansteuerung der Matrix
 
+
 - [ ] Ansteuerung der passenden LEDs
 - [ ] Schieberegister zur Ansteuerung ??
 

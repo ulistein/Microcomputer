@@ -1,3 +1,5 @@
+#include <StivSeg.h>
+
 void setup() {
   // put your setup code here, to run once:
 // test nico

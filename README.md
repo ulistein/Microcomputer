@@ -43,5 +43,6 @@ Bei Gewinn leuchtet ganze Matrix in LEDs des jeweiligen Spielers --> Strich/ aus
 
 ### Fernbedienung 
 
+- [ ] Einarbeitung, wie Signale empfangen & ausgewertet werden
 - [ ] Auswertung der Fernbedienungssignale, welche LEDs angesteuert werden sollen
 

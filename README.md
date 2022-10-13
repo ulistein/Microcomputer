@@ -29,6 +29,17 @@ Bei Gewinn leuchtet ganze Matrix in LEDs des jeweiligen Spielers --> Strich/ aus
 
 ## Aufgaben 
 
-Ansteuerung der Matrix
-Fernbedinung
+### Ansteuerung der Matrix
+
+Ansteuerung der passenden LEDs
+
+Abwechseln der Spielanzeige Ausgefüllt & Querstrich
+
+Fehlermeldung, wenn bereits angesteuertes Feld nochmal angesteuert werden soll
+
+Gewinn Bedingung checken, wenn 3 in einer Reihe gleich sind --> ganze Matrix in Gewinner Form
+
+### Fernbedienung 
+
+Auswertung der Fernbedienungssignale, welche LEDs angesteuert werden sollen
 

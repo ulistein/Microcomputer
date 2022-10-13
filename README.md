@@ -4,6 +4,7 @@ Project für the 3rd term
 # Reaktionsspiel
 
 2 Fernbedienungen
+
 3* 7 Segment Anzeige
 
 ## Spielidee:
@@ -33,11 +34,11 @@ Bei Gewinn leuchtet ganze Matrix in LEDs des jeweiligen Spielers --> Strich/ aus
 
 Ansteuerung der passenden LEDs
 
-Abwechseln der Spielanzeige Ausgefüllt & Querstrich
+[x] Abwechseln der Spielanzeige Ausgefüllt & Querstrich
 
-Fehlermeldung, wenn bereits angesteuertes Feld nochmal angesteuert werden soll
+[x] Fehlermeldung, wenn bereits angesteuertes Feld nochmal angesteuert werden soll
 
-Gewinn Bedingung checken, wenn 3 in einer Reihe gleich sind --> ganze Matrix in Gewinner Form
+[x] Gewinn Bedingung checken, wenn 3 in einer Reihe gleich sind --> ganze Matrix in Gewinner Form
 
 ### Fernbedienung 
 

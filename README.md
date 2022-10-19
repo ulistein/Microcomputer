@@ -12,6 +12,7 @@ Fernbedienung
 Auf 7 Segmentanzeige wird Zahl angezeigt, 2 Spieler spielen gegeneinander.
 
 Reaktionszeit wird gemessen, wer schneller ist bekommt Punkt -->angezeigt per 7Segmentanzeigen.
+Spieler 1 spielt 1 Runde, Zeit wird gemessen. Danach spielt Spieler 2 eine runde. Die schnellere Runde gewinnt.
 
 Randmoized Zahl angegeben
 

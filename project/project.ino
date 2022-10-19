@@ -25,6 +25,7 @@ void loop(){
       //Ausgabe des Wertes auf die Serielle Schnittstelle.
       int value = results.value;
       switch (value){
+        case 16738455 : //Taste 0
         case 16724175 : //Taste 1
             led1Status = !led1Status; //umkehren des Status für die LED 1
             if(led1Status == true){
@@ -40,6 +41,27 @@ void loop(){
             } else {
               digitalWrite (led2Pin, LOW); //LED ausschalten
             }
+            case 16743045 : // Taste 3
+
+            case 16716015 : // Taste 4
+
+            case 16726215 : // Taste 5
+
+            case 16734885 : // Taste 6
+
+            case 16734885 : // Taste 7
+
+            case 16730805 : // Taste 8
+
+            case 16732845 : // Taste 9
+
+            case 16753245 : // Taste ON/OFF
+
+            case 16736925 : // Taste Mode
+
+            case 16754775 : // Taste Minus
+
+            case 16748655 : // Taset Plus
         break;
       }
       Serial.println(value, DEC);

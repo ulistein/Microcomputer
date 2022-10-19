@@ -1,18 +1,5 @@
 #include <IRremote.h>
 
-int irPin = 10; //Pin am Arduino Nano für den IR Receiver
-int ledPin = 5; //Pin am Arduino Nano für die LED als Signalbestätigung
-
-int led1Pin = 4; //Pin am Arduino Nano für LED 1
-int led2Pin = 3; //Pin am Arduino Nano für LED 2
-
-boolean led1Status = false;
-boolean led2Status = false;
-
-
-IRrecv irrecv(irPin); //Objekt initialisieren für die IR Übertragung
-decode_results results;
-
 //define pins for 8*8
   #define r1 2 //r=row
   #define r2 3
@@ -31,20 +18,18 @@ decode_results results;
   #define c7 16
   #define c8 17
 
-  //collect rows and columns
+//collect rows and columns
   int row[] = {r1, r2 ,r3 ,r4 ,r5, r6, r7, r8};
   int column[] = {c1, c2, c3, c4, c5, c6, c7, c8};
   //define the playfield
   byte field[] = {0x24, 0x24, 0xff, 0x24, 0x24, 0xff, 0x24, 0x24};
-  
 
-
-  //define a point struct
+//define a point struct
   typedef struct {
     int row;
     int column;
   }point;
-
+  
   //define positions
   point pos1 = {r1, c1};
   point pos2 = {r1, c4};
@@ -56,6 +41,19 @@ decode_results results;
   point pos8 = {r7, c4};
   point pos9 = {r7, c7};
 
+  int irPin = 22; //Pin am Arduino Nano für den IR Receiver
+  int ledPin =24; //Pin am Arduino Nano für die LED als Signalbestätigung
+
+  int led1Pin = 26; //Pin am Arduino Nano für LED 1
+  int led2Pin = 28; //Pin am Arduino Nano für LED 2
+
+  boolean led1Status = false;
+  boolean led2Status = false;
+
+
+  IRrecv irrecv(irPin); //Objekt initialisieren für die IR Übertragung
+  decode_results results;
+
 
 void setup() {
   // put your setup code here, to run once:
@@ -66,9 +64,11 @@ void setup() {
   irrecv.enableIRIn(); //Den IR Pin aktivieren
   Serial.begin(9600); //Serielle kommunikation mit 9600 Baud beginnen.
 }
- 
-void loop(){
-   if (irrecv.decode(&results)) { //Wenn etwas gelesen wurde dann...
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  drawDisplay(field);
+  if (irrecv.decode(&results)) { //Wenn etwas gelesen wurde dann...
       //Ausgabe des Wertes auf die Serielle Schnittstelle.
       int value = results.value;
       switch (value){
@@ -90,10 +90,33 @@ void loop(){
             }
             case 16743045 : // Taste 3
 
-void loop() {
-  // put your main code here, to run repeatedly:
-  drawDisplay(field);
+            case 16716015 : // Taste 4
 
+            case 16726215 : // Taste 5
+
+            case 16734885 : // Taste 6
+
+            case 16728765 : // Taste 7
+
+            case 16730805 : // Taste 8
+
+            case 16732845 : // Taste 9
+
+            case 16753245 : // Taste ON/OFF
+
+            case 16736925 : // Taste Mode
+
+            case 16754775 : // Taste Minus
+
+            case 16748655 : // Taset Plus
+        break;
+      }
+      Serial.println(value, DEC);
+      digitalWrite (ledPin, HIGH); //Status LED anschalten
+      irrecv.resume(); // auf den nächsten Wert warten
+      delay(250); // kurze Pause von 250ms damit die LED aufleuchten kann.
+      digitalWrite (ledPin, LOW); //Status LED ausschalten
+ }
 }
 
 void set_pins(){
@@ -172,37 +195,8 @@ void drawO(point pos){
 
   digitalWrite(pos.row+1,LOW);
   digitalWrite(pos.column+1,HIGH);
-
-
 }
 
 
 
-            case 16716015 : // Taste 4
 
-            case 16726215 : // Taste 5
-
-            case 16734885 : // Taste 6
-
-            case 16734885 : // Taste 7
-
-            case 16730805 : // Taste 8
-
-            case 16732845 : // Taste 9
-
-            case 16753245 : // Taste ON/OFF
-
-            case 16736925 : // Taste Mode
-
-            case 16754775 : // Taste Minus
-
-            case 16748655 : // Taset Plus
-        break;
-      }
-      Serial.println(value, DEC);
-      digitalWrite (ledPin, HIGH); //Status LED anschalten
-      irrecv.resume(); // auf den nächsten Wert warten
-      delay(250); // kurze Pause von 250ms damit die LED aufleuchten kann.
-      digitalWrite (ledPin, LOW); //Status LED ausschalten
- }
-}

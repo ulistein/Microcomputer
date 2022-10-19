@@ -3,9 +3,9 @@ Project für the 3rd term
 
 # Reaktionsspiel
 
-2 Fernbedienungen
+Fernbedienung
 
-3* 7 Segment Anzeige
+7 Segment Anzeige
 
 ## Spielidee:
 
@@ -16,7 +16,7 @@ Reaktionszeit wird gemessen, wer schneller ist bekommt Punkt -->angezeigt per 7S
 Randmoized Zahl angegeben
 
 
-# Tic Tac Toe
+# Tic Tac Toe (Nico)
 
 ## Spielidee
 klassisches Tic Tac Toe 
@@ -30,7 +30,7 @@ Bei Gewinn leuchtet ganze Matrix in LEDs des jeweiligen Spielers --> Strich/ aus
 
 ## Aufgaben 
 
-### Ansteuerung der Matrix
+### Ansteuerung der Matrix (Uli)
 
 
 - [ ] Ansteuerung der passenden LEDs
@@ -43,8 +43,10 @@ Bei Gewinn leuchtet ganze Matrix in LEDs des jeweiligen Spielers --> Strich/ aus
 - [ ] Gewinn Bedingung checken, wenn 3 in einer Reihe gleich sind --> ganze Matrix in Gewinner Form
 - [ ] Array um Gewinn zu checken und überschreiben zu verhindern 
 
-### Fernbedienung 
+### Fernbedienung (Clemens)
 
 - [ ] Einarbeitung, wie Signale empfangen & ausgewertet werden
 - [ ] Auswertung der Fernbedienungssignale, welche LEDs angesteuert werden sollen
 
+### 7-Segment Anzeige (Daniel)
+- [ ] Ausgabe der Zahlen

@@ -1,10 +1,10 @@
 #include <IRremote.h>
 
-int irPin = 10; //Pin am Arduino Nano für den IR Receiver
-int ledPin = 5; //Pin am Arduino Nano für die LED als Signalbestätigung
+int irPin 0= 22; //Pin am Arduino Nano für den IR Receiver
+int ledPin = 23; //Pin am Arduino Nano für die LED als Signalbestätigung
 
-int led1Pin = 4; //Pin am Arduino Nano für LED 1
-int led2Pin = 3; //Pin am Arduino Nano für LED 2
+int led1Pin = 26; //Pin am Arduino Nano für LED 1
+int led2Pin = 28; //Pin am Arduino Nano für LED 2
 
 boolean led1Status = false;
 boolean led2Status = false;

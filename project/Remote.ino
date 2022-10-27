@@ -1,6 +1,6 @@
+#include <IRremote.h>
 
-
-/*void remote(decode_results results, Button &button){
+void remote(decode_results results, Button &button){
     if (irrecv.decode(&results)) { //Wenn etwas gelesen wurde dann...
           //Ausgabe des Wertes auf die Serielle Schnittstelle.
           int value = results.value;
@@ -55,4 +55,3 @@
          // digitalWrite (ledPin, LOW); //Status LED ausschalten
     }
 }
-*/

@@ -49,7 +49,7 @@ void remote(decode_results results, Button &button){
             break;
           }
           Serial.println(value, DEC);
-        //  digitalWrite (ledPin, HIGH); //Status LED anschalten
+        
           irrecv.resume(); // auf den nächsten Wert warten
           delay(250); // kurze Pause von 250ms damit die LED aufleuchten kann.
          // digitalWrite (ledPin, LOW); //Status LED ausschalten

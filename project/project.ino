@@ -1,4 +1,4 @@
-#include <IRremote.h>
+
 #include "src/classes/Matrix/matrix.h"
 
   //create object to us matrix functions
@@ -33,8 +33,7 @@
   boolean led2Status = false;
 
 
-  IRrecv irrecv(irPin); //Objekt initialisieren für die IR Übertragung
-  decode_results results;
+ 
 
 
 void setup() {
@@ -43,14 +42,13 @@ void setup() {
   //myMatrix.clearDisplay(row, column);
   pinMode(ledPin, OUTPUT);  //Den LED Pin als Ausgang deklarieren.
   pinMode(irPin, INPUT);  //Den IR Pin als Eingang deklarieren.
-  irrecv.enableIRIn(); //Den IR Pin aktivieren
-  Serial.begin(9600); //Serielle kommunikation mit 9600 Baud beginnen.
+ 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   myMatrix.drawDisplay(field, row, column);
-  remote();
+  
 }
 
 

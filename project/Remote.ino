@@ -1,52 +1,53 @@
 
-void remote(decode_results results,Button &button)
+int remote(decode_results results)
 {
   if (irrecv.decode(&results)) { //Wenn etwas gelesen wurde dann...
       //Ausgabe des Wertes auf die Serielle Schnittstelle.
       int value = results.value;
+      
       switch (value)
       {
           case 26775: //Taste 0
-              button.But0 = true;
+              return 0;
               break;
           case 12495: //Taste 1  
-              button.But1 = true;
+              return 1;
               break;
           case 6375: //Taste 2
-              button.But2 = true;
+              return 2;
               break;
           case 31365: // Taste 3
-              button.But3 = true;
+              return 3;
               break;
           case 4335: // Taste 4
-              button.But4 = true;
+              return 4;
               break;
           case 14535: // Taste 5
-              button.But5 = true;
+              return 5,
               break;
           case 23205 : // Taste 6
-              button.But5 = true;
+              return 6;
               break;
           case 17085 : // Taste 7
-              button.But7 = true;
+              return 7;
               break;
           case 19125 : // Taste 8
-              button.But8 = true;
+              return 8;
               break;
           case 21165 : // Taste 9
-              button.But9 = true;
+              return 9;
               break;
           case -23971 : // Taste ON/OFF
-              button.ON = true;
+              return 10;
               break;
           case 25245 : // Taste Mode
-              button.Mode = true;
+              return 11;
               break;
           case -22441 : // Taste Minus
-              button.Minus = true;
+              return 12;
               break;
           case -28561 : // Taset Plus
-              button.Plus = true;
+              return 13;
           break;
         
       }

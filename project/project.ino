@@ -33,7 +33,9 @@
   boolean led1Status = false;
   boolean led2Status = false;
 
-struct Button
+    
+
+/*struct Button
 {
     boolean But0 = false;
     boolean But1 = false;
@@ -50,9 +52,9 @@ struct Button
     boolean Plus = false;
     boolean Minus = false;
 };
- 
+ */
 
-Button button;
+
 IRrecv irrecv(irPin); //Objekt initialisieren für die IR Übertragung
 decode_results results;
 
@@ -73,7 +75,8 @@ void loop() {
   // put your main code here, to run repeatedly:
   myMatrix.drawDisplay(field, row, column);
   
-  remote(results, button);
+  remote(results);
+ 
 }
 
 

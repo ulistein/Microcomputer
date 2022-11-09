@@ -1,4 +1,4 @@
-#indef TTT_LOGIC_H
+#ifndef TTT_LOGIC_H
 #define TTT_LOGIC_H
 
 class TTT{

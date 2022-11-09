@@ -79,7 +79,7 @@ void TTT::player_turn(){
         player_turn();
     }
     /* Ends */
-    display_board();
+    //display_board();
 }
 
 //Function to get the game status e.g. GAME WON, GAME DRAW GAME IN CONTINUE MODE
@@ -113,7 +113,7 @@ void TTT::gameplay()
    // cout<<"tttT I C K -- T A C -- T O E -- G A M Ettt";
    // cout<<"nttttFOR 2 PLAYERSnttt";
     while(gameover()){
-        display_board();
+        //display_board();
         player_turn();
         gameover();
     }

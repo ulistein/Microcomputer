@@ -1,11 +1,10 @@
-#include "TTT_logic.h"
-
+#include "IRremote.h"
 //Tic Tac Toe Game in C++
 
 //Importing the inbuild libraries in CPP
-#include <iostream>
-#include <stdlib.h>
-using namespace std;
+//#include <iostream>
+//#include <stdlib.h>
+//using namespace std;
 //Array for the board
 char board[3][3] = {{'1','2','3'},{'4','5','6'},{'7','8','9'}};
 //Variable Declaration
@@ -35,7 +34,7 @@ bool draw = false;
 
 //Function to get the player input and update the board
 
-void TTT::player_turn(){
+void player_turn(){
     if(turn == 'X'){
         //cout<<"ntPlayer - 1 [X] turn : ";
     }
@@ -45,7 +44,14 @@ void TTT::player_turn(){
     //Taking input from user
     //updating the board according to choice and reassigning the turn Start
 
-    cin>> choice;
+    //cin>> choice;
+   while(1){
+      choice = remote(results);
+      if(choice >= 1 && choice <= 9){
+         break;
+      }
+   }
+    //remote();
 
     //switch case to get which row and column will be update
 
@@ -75,7 +81,7 @@ void TTT::player_turn(){
         turn = 'X';
     }else {
         //if input position already filled
-        cout<<"Box already filled!n Please choose another!!nn";
+        //cout<<"Box already filled!n Please choose another!!nn";
         player_turn();
     }
     /* Ends */
@@ -84,7 +90,7 @@ void TTT::player_turn(){
 
 //Function to get the game status e.g. GAME WON, GAME DRAW GAME IN CONTINUE MODE
 
-bool TTT::gameover(){
+bool gameover(){
     //checking the win for Simple Rows and Simple Column
     for(int i=0; i<3; i++)
     if(board[i][0] == board[i][1] && board[i][0] == board[i][2] || board[0][i] == board[1][i] && board[0][i] == board[2][i])
@@ -108,7 +114,7 @@ bool TTT::gameover(){
 
 //Program Main Method
 
-void TTT::gameplay()
+void gameplay()
 {
    // cout<<"tttT I C K -- T A C -- T O E -- G A M Ettt";
    // cout<<"nttttFOR 2 PLAYERSnttt";
@@ -118,11 +124,11 @@ void TTT::gameplay()
         gameover();
     }
     if(turn == 'X' && draw == false){
-        cout<<"nnCongratulations!Player with 'X' has won the game";
+        //cout<<"nnCongratulations!Player with 'X' has won the game";
     }
     else if(turn == 'O' && draw == false){
-        cout<<"nnCongratulations!Player with 'O' has won the game";
+        //cout<<"nnCongratulations!Player with 'O' has won the game";
     }
-    else
-    cout<<"nnGAME DRAW!!!nn";
-} 
+    //else
+    //cout<<"nnGAME DRAW!!!nn";
+}

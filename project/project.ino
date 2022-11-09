@@ -1,6 +1,6 @@
 #include <IRremote.h>
 #include "src/classes/Matrix/matrix.h"
-#include "src/classes/TTT_logic/TTT_logic.h"
+//#include "src/classes/TTT_logic/TTT_logic.h"
 
 #define irPin 22 // Remote pin
   //create object to us matrix functions

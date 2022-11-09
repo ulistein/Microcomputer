@@ -35,24 +35,7 @@
 
     
 
-/*struct Button
-{
-    boolean But0 = false;
-    boolean But1 = false;
-    boolean But2 = false;
-    boolean But3 = false;
-    boolean But4 = false;
-    boolean But5 = false;
-    boolean But6 = false;
-    boolean But7 = false;
-    boolean But8 = false;
-    boolean But9 = false;
-    boolean ON = false;
-    boolean Mode = false;
-    boolean Plus = false;
-    boolean Minus = false;
-};
- */
+
 
 
 IRrecv irrecv(irPin); //Objekt initialisieren für die IR Übertragung

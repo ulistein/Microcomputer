@@ -51,7 +51,7 @@ int remote(decode_results results)
           break;
         
       }
-      //Serial.println(value, DEC);
+      Serial.println(value, DEC);
      
       irrecv.resume(); // auf den nächsten Wert warten
       delay(250); // kurze Pause von 250ms damit die LED aufleuchten kann.

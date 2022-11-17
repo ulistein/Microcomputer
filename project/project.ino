@@ -85,7 +85,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   drawDisplay(field, row, column);
-  remote(results);
+  //remote(results);
   gameplay();
   clearDisplay(row, column);
   

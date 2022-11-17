@@ -42,7 +42,7 @@ void Matrix::drawDisplay(byte *example, int row[], int column[]){
   }
 }
 
-void Matrix::drawX(point pos, int row[], int column[]){
+void Matrix::drawX(point pos){
   //draw an / from the given pos
   digitalWrite(pos.row,HIGH);
   digitalWrite(pos.column,LOW);
@@ -57,7 +57,7 @@ void Matrix::drawX(point pos, int row[], int column[]){
   digitalWrite(pos.column+1,HIGH);
 }
 
-void Matrix::drawO(point pos, int row[], int column[]){
+void Matrix::drawO(point pos){
   //draw an o from the pos
   digitalWrite(pos.row,HIGH);
   digitalWrite(pos.column,LOW);
@@ -82,4 +82,28 @@ void Matrix::drawO(point pos, int row[], int column[]){
 
   digitalWrite(pos.row+1,LOW);
   digitalWrite(pos.column+1,HIGH);
+}
+
+point returnPos(int i, int j){
+  if(i==0 && j== 0){
+    return pos1;
+  }else if(i==0 && j== 1){
+    return pos2;
+  }
+  else if(i==0 && j== 2){
+    return pos3;
+  }
+  else if(i==1 && j== 0){
+    return pos4;
+  }else if(i==1 && j== 1){
+    return pos5;
+  }else if(i==1 && j== 2){
+    return pos6;
+  }else if(i==2 && j== 0){
+    return pos7;
+  }else if(i==2 && j== 1){
+    return pos8;
+  }else if(i==2 && j== 2){
+    return pos9;
+  }
 }

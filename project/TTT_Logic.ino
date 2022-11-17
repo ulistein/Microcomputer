@@ -1,95 +1,76 @@
 #include "IRremote.h"
+
 //Tic Tac Toe Game in C++
 
 //Importing the inbuild libraries in CPP
-//#include <iostream>
-//#include <stdlib.h>
+
 //using namespace std;
 //Array for the board
-char board[3][3] = {{'1','2','3'},{'4','5','6'},{'7','8','9'}};
+char board[3][3] = {{'1','2','3'},
+                    {'4','5','6'},
+                    {'7','8','9'}};
 //Variable Declaration
 int choice;
-int row,column;
 char turn = 'X';
 bool draw = false;
+int ROW, COLUMN;
 
 //Function to show the current status of the gaming board
-
-/* void display_board(){
-
-    //Rander Game Board LAYOUT
-
-    cout<<"PLAYER - 1 [X]t PLAYER - 2 [O]nn";
-    cout<<"tt     |     |     n";
-    cout<<"tt  "<<board[0][0]<<"  | "<<board[0][1]<<"  |  "<<board[0][2]<<" n";
-    cout<<"tt_____|_____|_____n";
-    cout<<"tt     |     |     n";
-    cout<<"tt  "<<board[1][0]<<"  | "<<board[1][1]<<"  |  "<<board[1][2]<<" n";
-    cout<<"tt_____|_____|_____n";
-    cout<<"tt     |     |     n";
-    cout<<"tt  "<<board[2][0]<<"  | "<<board[2][1]<<"  |  "<<board[2][2]<<" n";
-    cout<<"tt     |     |     n";
-}
-*/
-
-//Function to get the player input and update the board
-
-void player_turn(){
-    if(turn == 'X'){
-        //cout<<"ntPlayer - 1 [X] turn : ";
-    }
-    else if(turn == 'O'){
-        //cout<<"ntPlayer - 2 [O] turn : ";
-    }
-    //Taking input from user
-    //updating the board according to choice and reassigning the turn Start
-
-    //cin>> choice;
-   while(1){
-      choice = remote(results);
-      if(choice >= 1 && choice <= 9){
-         break;
+void display_board(){
+//board[0][0] = 'X';
+    for(int i = 0; i < 3; i++)
+    {
+      for(int j = 0; j < 3; j++)
+      {
+          if(board[i][j] == 'X')
+          {
+            drawX(returnPos(i, j));
+          }
+          else if(board[i][j] == 'O')
+          {
+          drawO(returnPos(i, j));
+          }
       }
-   }
-    //remote();
-
-    //switch case to get which row and column will be update
-
-    switch(choice){
-        case 1: row=0; column=0; break;
-        case 2: row=0; column=1; break;
-        case 3: row=0; column=2; break;
-        case 4: row=1; column=0; break;
-        case 5: row=1; column=1; break;
-        case 6: row=1; column=2; break;
-        case 7: row=2; column=0; break;
-        case 8: row=2; column=1; break;
-        case 9: row=2; column=2; break;
-        default:
-            //cout<<"Invalid Move";
     }
-
-    if(turn == 'X' && board[row][column] != 'X' && board[row][column] != 'O'){
+  
+}
+//Function to get the player input and update the board
+void player_turn()
+{
+      choice = remote(results);
+    //switch case to get which ROW and COLUMN will be update
+    switch(choice)
+    {
+        case 1: ROW=0; COLUMN=0; break;
+        case 2: ROW=0; COLUMN=1; break;
+        case 3: ROW=0; COLUMN=2; break;
+        case 4: ROW=1; COLUMN=0; break;
+        case 5: ROW=1; COLUMN=1; break;
+        case 6: ROW=1; COLUMN=2; break;
+        case 7: ROW=2; COLUMN=0; break;
+        case 8: ROW=2; COLUMN=1; break;
+        case 9: ROW=2; COLUMN=2; break;
+        //default:
+    }
+    if(turn == 'X' && board[ROW][COLUMN] != 'X' && board[ROW][COLUMN] != 'O')
+    {
         //updating the position for 'X' symbol if
         //it is not already occupied
-        board[row][column] = 'X';
+        board[ROW][COLUMN] = 'X';
         turn = 'O';
-    }else if(turn == 'O' && board[row][column] != 'X' && board[row][column] != 'O'){
+    }else if(turn == 'O' && board[ROW][COLUMN] != 'X' && board[ROW][COLUMN] != 'O'){
         //updating the position for 'O' symbol if
         //it is not already occupied
-        board[row][column] = 'O';
+        board[ROW][COLUMN] = 'O';
         turn = 'X';
-    }else {
-        //if input position already filled
-        //cout<<"Box already filled!n Please choose another!!nn";
-        player_turn();
     }
-    /* Ends */
-    //display_board();
+    /*else 
+    {
+      //if input position already filled
+      player_turn();    }
+    */
 }
-
 //Function to get the game status e.g. GAME WON, GAME DRAW GAME IN CONTINUE MODE
-
 bool gameover(){
     //checking the win for Simple Rows and Simple Column
     for(int i=0; i<3; i++)
@@ -111,17 +92,15 @@ bool gameover(){
     draw = true;
     return false;
 }
-
 //Program Main Method
-
 void gameplay()
 {
    // cout<<"tttT I C K -- T A C -- T O E -- G A M Ettt";
    // cout<<"nttttFOR 2 PLAYERSnttt";
     while(gameover()){
-        //display_board();
+        display_board();
+        drawDisplay(field, row, column);
         player_turn();
-        gameover();
     }
     if(turn == 'X' && draw == false){
         //cout<<"nnCongratulations!Player with 'X' has won the game";

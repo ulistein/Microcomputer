@@ -23,7 +23,7 @@ int remote(decode_results results)
               return 4;
               break;
           case 14535: // Taste 5
-              return 5,
+              return 5;
               break;
           case 23205 : // Taste 6
               return 6;
@@ -51,7 +51,7 @@ int remote(decode_results results)
           break;
         
       }
-      Serial.println(value, DEC);
+      //Serial.println(value, DEC);
      
       irrecv.resume(); // auf den nächsten Wert warten
       delay(250); // kurze Pause von 250ms damit die LED aufleuchten kann.

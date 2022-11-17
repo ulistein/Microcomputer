@@ -1,10 +1,10 @@
 #include <IRremote.h>
 #include "src/classes/Matrix/matrix.h"
+#include "src/classes/TTT_logic/TTT_logic.h"
 
 #define irPin 22 // Remote pin
   //create object to us matrix functions
-  Matrix myMatrix;
-
+  
   //collect rows and columns
   int row[] = {r1, r2 ,r3 ,r4 ,r5, r6, r7, r8};
   int column[] = {c1, c2, c3, c4, c5, c6, c7, c8};
@@ -20,7 +20,8 @@
   point pos4 = {r4, c1};
   point pos5 = {r4, c4};
   point pos6 = {r4, c7};
-  point pos7 = {r7, c1};
+  point pos7 = {r7, c1};Matrix myMatrix;
+
   point pos8 = {r7, c4};
   point pos9 = {r7, c7};
 
@@ -61,8 +62,3 @@ void loop() {
   remote(results);
  
 }
-
-
-
-
-

@@ -27,6 +27,16 @@
     int column;
   }point;
 
+  point pos1 = {r1, c1};
+  point pos2 = {r1, c4};
+  point pos3 = {r1, c7};
+  point pos4 = {r4, c1};
+  point pos5 = {r4, c4};
+  point pos6 = {r4, c7};
+  point pos7 = {r7, c1};
+  point pos8 = {r7, c4};
+  point pos9 = {r7, c7};
+
 class Matrix{
   public:
 
@@ -37,8 +47,9 @@ class Matrix{
   void clearDisplay(int row[], int column[]);
   void drawDot(point x);
   void drawDisplay(byte *example, int row[], int column[]);
-  void drawX(point pos,int row[], int column[]);
-  void drawO(point pos,int row[], int column[]);
+  void drawX(point pos);
+  void drawO(point pos);
+  point returnPos(int i, int j);
 
 
   private:

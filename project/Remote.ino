@@ -4,7 +4,7 @@ int remote(decode_results results)
   if (irrecv.decode(&results)) { //Wenn etwas gelesen wurde dann...
       //Ausgabe des Wertes auf die Serielle Schnittstelle.
       int value = results.value;
-      
+      irrecv.resume();
       switch (value)
       {
           case 26775: //Taste 0
@@ -51,10 +51,7 @@ int remote(decode_results results)
           break;
         
       }
-      Serial.println(value, DEC);
      
-      irrecv.resume(); // auf den nächsten Wert warten
-      delay(250); // kurze Pause von 250ms damit die LED aufleuchten kann.
       
  }
 }

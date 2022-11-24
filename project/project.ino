@@ -70,6 +70,8 @@ decode_results results;
 
 
 void setup() {
+
+  set_pins();
   
   // put your setup code here, to run once:
   setPins(row, column);

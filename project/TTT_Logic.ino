@@ -30,6 +30,27 @@ void display_board(){
 //Function to get the player input and update the board
 void player_turn()
 {
+    setChoice();
+
+    if(turn == 'X' && board[ROW][COLUMN] != 'X' && board[ROW][COLUMN] != 'O')
+    {
+        //updating the position for 'X' symbol if
+        //it is not already occupied
+        board[ROW][COLUMN] = 'X';
+        turn = 'O';
+    }
+    else if(turn == 'O' && board[ROW][COLUMN] != 'X' && board[ROW][COLUMN] != 'O')
+    {
+        //updating the position for 'O' symbol if
+        //it is not already occupied
+        board[ROW][COLUMN] = 'O';
+        turn = 'X';
+    }
+}
+//Function to translate Int of remote into ROW and COLUMN
+void setChoice()
+{
+    //While loop to avoid invalid numbers
     while(1){
     drawDisplay(field, row, column);
     choice = remote(results);
@@ -49,22 +70,6 @@ void player_turn()
         case 7: ROW=2; COLUMN=0; break;
         case 8: ROW=2; COLUMN=1; break;
         case 9: ROW=2; COLUMN=2; break;
-    }
-    if(turn == 'X' && board[ROW][COLUMN] != 'X' && board[ROW][COLUMN] != 'O')
-    {
-        //updating the position for 'X' symbol if
-        //it is not already occupied
-        board[ROW][COLUMN] = 'X';
-        turn = 'O';
-        choice = 0;
-    }
-    else if(turn == 'O' && board[ROW][COLUMN] != 'X' && board[ROW][COLUMN] != 'O')
-    {
-        //updating the position for 'O' symbol if
-        //it is not already occupied
-        board[ROW][COLUMN] = 'O';
-        turn = 'X';
-        choice = 0;
     }
 }
 //Function to get the game status e.g. GAME WON, GAME DRAW GAME IN CONTINUE MODE
@@ -111,6 +116,5 @@ void clearArray()
       board[1][2] ='F';
       board[2][0] ='G';
       board[2][1] ='H';
-      board[2][2] ='I';
-      
+      board[2][2] ='I';   
 }

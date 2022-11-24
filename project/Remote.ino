@@ -4,7 +4,7 @@ int remote(decode_results results)
   if (irrecv.decode(&results)) { //Wenn etwas gelesen wurde dann...
       //Ausgabe des Wertes auf die Serielle Schnittstelle.
       int value = results.value;
-      irrecv.resume();
+      irrecv.resume();          // warte auf Werte von Fernbedienung
       switch (value)
       {
           case 26775: //Taste 0
